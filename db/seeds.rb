@@ -9,6 +9,9 @@ puts "GENERATING SAMPLE DATA"
 
 NUM_OF_POST = 1000
 
+start = Time.now
 for i in 0..NUM_OF_POST do
   post = Post.create!(:title => Faker::Lorem.sentence, :body => Faker::Lorem.paragraph)
 end
+
+puts "So far: #{(Time.now - start)/60} mins"
